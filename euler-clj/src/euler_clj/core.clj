@@ -24,14 +24,16 @@
   (apply + (filter even? (take-while #(< % 4000000) fib))))
 
 (defn prime-factors
+  "Return the prime factors of n in ascending order"
   ([n] (prime-factors n 2 '()))
-  ([n candidate acc]
-   (cond (<= n 1) (reverse acc)
-         (zero? (rem n candidate)) (recur (/ n candidate) candidate (cons candidate acc))
-         :else (recur n (inc candidate) acc))))
+  ([n candidate factors]
+   (cond 
+     (< n 2) (reverse factors)
+     (zero? (rem n candidate)) (recur (/ n candidate) candidate (cons candidate factors))
+     :else (recur n (inc candidate) factors))))
 
 (defn problem-3
   "What is the largest prime factor of the number 600851475143 ?"
   []
-  (apply max (prime-factors 600851475143)))
+  (last (prime-factors 600851475143)))
 
