@@ -1,4 +1,4 @@
-(ns euler-clj.core)
+(ns euler.core)
 
 (def integers
   "All non-negative integers"

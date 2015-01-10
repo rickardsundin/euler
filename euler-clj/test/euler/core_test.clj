@@ -1,6 +1,6 @@
-(ns euler-clj.core-test
+(ns euler.core-test
   (:require [clojure.test :refer :all]
-            [euler-clj.core :refer :all]))
+            [euler.core :refer :all]))
 
 (deftest problem-1-test
   (testing "Multiples of 3 and 5"
